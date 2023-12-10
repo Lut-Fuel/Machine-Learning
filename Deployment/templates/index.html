@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Model Prediction</title>
+</head>
+<body>
+    <h1>Model Prediction Form</h1>
+    <form id="predictionForm" onsubmit="predict(event)">
+        <label for="cylinders">Number of Cylinders:</label>
+        <input type="number" name="Number_of_Cylinders" required><br>
+
+        <label for="engine_type">Engine Type:</label>
+        <input type="number" name="Engine_Type" required><br>
+
+        <label for="horse_power">Engine Horse Power:</label>
+        <input type="number" name="Engine_Horse_Power" step="0.1" required><br>
+
+        <label for="horse_power_rpm">Engine Horse Power RPM:</label>
+        <input type="number" name="Engine_Horse_Power_RPM" required><br>
+
+        <label for="transmission">Transmission:</label>
+        <input type="number" name="Transmission" required><br>
+
+        <label for="acceleration">Acceleration 0 to 100 Km:</label>
+        <input type="number" name="Acceleration_0_to_100_Km" step="0.1" required><br>
+
+        <label for="fuel_grade">Fuel Grade:</label>
+        <input type="number" name="Fuel_Grade" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <!-- ... (other form elements) ... -->
+    <p id="result"></p>
+
+    <script>
+        async function predict(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(document.getElementById("predictionForm"));
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+
+                // Display the predicted value and result in the HTML document
+                const resultElement = document.getElementById("result");
+                resultElement.innerHTML = `Predicted Value: ${result.predicted_value.toFixed(2)}, Result: Rp. ${result.result.toFixed(2)}`;
+            } else {
+                // Handle error cases
+                console.error('Prediction request failed.');
+            }
+        }
+    </script>
+</body>
+</html>
