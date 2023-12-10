@@ -1,3 +1,2 @@
-To start use 
+Kalo mau nyoba di terminal
 uvicorn main:app --reload
-in terminal
