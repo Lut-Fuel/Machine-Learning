@@ -29,7 +29,6 @@ class InputData(BaseModel):
 # Define a Pydantic model for the response
 class PredictionResponse(BaseModel):
     predicted_value: float
-    result: float
 
 # Define a route for rendering the form
 @app.get("/", response_class=HTMLResponse)
@@ -59,10 +58,4 @@ async def predict(data: InputData):
     # Extract the predicted value
     predicted_value = prediction[0][0]
 
-    # Define the price of fuel (replace with your actual price)
-    fuel_price = 10000
-
-    # Multiply the predicted value by the price of fuel
-    result = predicted_value * fuel_price
-
-    return {"predicted_value": predicted_value, "result": result}
+    return {"predicted_value": predicted_value}
