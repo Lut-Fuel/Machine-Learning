@@ -8,12 +8,12 @@ scaler = joblib.load('scaler_dinova1.joblib')
 
 # Create a sample input for testing
 sample_input = np.array([[
-    8,    # Number_of_Cylinders
+    4,    # Number_of_Cylinders
     0,    # Engine_Type
-    354.0,    # Engine_Horse_Power
-    6500,    # Engine_Horse_Power_RPM
+    224.0,    # Engine_Horse_Power
+    5000,    # Engine_Horse_Power_RPM
     1,    # Transmission
-    5.6,  # Acceleration_0_to_100_Km
+    6.2,  # Acceleration_0_to_100_Km
     3     # Fuel_Grade
 ]])
 
