@@ -70,7 +70,7 @@ def predict_fuel(datas:carData):
     data_test = data_test.batch(1)
     hasil = model.predict(data_test)[0][0]
     return {
-            'Hasil prediksi bahan bakar (dalam L/100Km)': hasil
+            'Hasil prediksi bahan bakar (dalam Km/L)': round(hasil.tolist(), 2)
     }
 
 # Run the API using uvicorn
