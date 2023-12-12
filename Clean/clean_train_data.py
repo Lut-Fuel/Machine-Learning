@@ -27,7 +27,7 @@ df = pd.read_csv('Dataset/Raw Data/Car Dataset 1945-2020.csv',
 df.rename(columns={'Modle':'Model'}, inplace=True)
 
 #Using average year on the data
-df['year'] = df[['Year from', 'Year_to']].mean(axis=1).round()
+df['year'] = df[['Year_from', 'Year_to']].mean(axis=1).round()
 
 #Cleaning some Null datas and more unused columns
 df = df[df['battery_capacity_KW_per_h'].isna()]
