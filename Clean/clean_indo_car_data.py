@@ -160,6 +160,9 @@ df = df.drop(['Consumption_L_per_100_km', 'Distance_km', 'Mixed_Fuel_Consumption
 df.rename(columns={'Consumption_km_per_L': 'Mixed_Fuel_Consumption_per_100_km_l'}, inplace=True)
 df['Mixed_Fuel_Consumption_per_100_km_l'] = df['Mixed_Fuel_Consumption_per_100_km_l'].round(1)
 
+#Dropping extra null values
+df.dropna(inplace=True)
+
 
 print(df.info())
 print('')
