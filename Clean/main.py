@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from sqlmodel import Field, SQLModel, create_engine, Session
 from typing import Optional
+from keys import DATABASE_URL
 
 model = tf.keras.models.load_model('model.h5')
 scaler = joblib.load('scaler.joblib')
@@ -29,9 +30,18 @@ class Car(SQLModel, table=True):
     type_of_car: int
     car_name: str
 
-DATABASE = "postgresql://postgres:lutfuel123semangat@34.101.191.219:5432/postgres"
-engine = create_engine(DATABASE)
+engine = create_engine(DATABASE_URL)
 SQLModel.metadata.create_all(engine)
+
+class UserInput(BaseModel):
+    Number_of_Cylinders: int
+    Engine_Type: int
+    Engine_Horse_Power: float
+    Engine_Horse_Power_RPM: int
+    Transmission: int
+    Fuel_Tank_Capacity: int
+    Acceleration_0_to_100_Km: float
+    Fuel_Grade: int
 
 class PredictionResponse(BaseModel):
     prediction: float
@@ -64,5 +74,5 @@ async def predict(car_id: int):
 
     return {"prediction": predicted_value}
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='127.0.0.1', port=8000)
