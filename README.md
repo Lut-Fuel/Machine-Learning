@@ -1,12 +1,8 @@
-# Machine-Learning
-Potential features used:
-- Cylinder = Power unit of the engine.
-- Horsepower (CC) =  A measurement used to calculate how quickly the force is produced from a vehicle's engine.
-- Weight/Full Weight (Kg)
-- Engine HP
-- Engine Type
+# Important Info
+- Primary dataset source : https://www.kaggle.com/datasets/jahaidulislam/car-specification-dataset-1945-2020
+- Final development folder : '\Clean'
 
-# Car Spesication 1945 - 2020 Features Used
+# Features Used in The Dataset ('Car Specification Dataset 1945-2020')
 - Make
 - Modle
 - Year_from
@@ -22,3 +18,20 @@ Potential features used:
 - acceleration_0_100_km/h_s
 - max_speed_km_per_h
 - fuel_grade
+
+For training the model:
+- number_of_cylinders
+- engine_type
+- engine_hp
+- engine_hp_rpm
+- transmission
+- fuel_tank_capacity_l
+- acceleration_0_100_km/h_s
+- fuel_grade
+- mixed_fuel_consumption_per_100_km_l (as target)
+
+
+
+
+
+
