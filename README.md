@@ -1,6 +1,6 @@
 # Important Info
-Primary dataset source : https://www.kaggle.com/datasets/jahaidulislam/car-specification-dataset-1945-2020
-Final development folder : '\Clean'
+- Primary dataset source : https://www.kaggle.com/datasets/jahaidulislam/car-specification-dataset-1945-2020
+- Final development folder : '\Clean'
 
 # Features Used in The Dataset ('Car Specification Dataset 1945-2020')
 - Make
