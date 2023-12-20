@@ -53,7 +53,7 @@ async def car_data(car_id: int):
     return car
 
 @app.post('/predict/', response_model=PredictionResponse)
-async def predict(car_id: int):
+async def predict(car_id: int, fuel_id: int):
     with Session(engine) as session:
         car_input = session.get(Car, car_id)
     
@@ -65,7 +65,7 @@ async def predict(car_id: int):
         car_input.transmission,
         car_input.fuel_tank_capacity,
         car_input.acceleration_0_to_100_km,
-        car_input.fuel_grade
+        fuel_id
     ]])
     
     scaled_input = scaler.transform(input_data)
@@ -74,5 +74,5 @@ async def predict(car_id: int):
 
     return {"prediction": predicted_value}
 
-# if __name__ == '__main__':
-#     uvicorn.run(app, host='127.0.0.1', port=8000)
+if __name__ == '__main__':
+     uvicorn.run(app, host='127.0.0.1', port=8000)
