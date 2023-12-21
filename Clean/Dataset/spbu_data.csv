@@ -1,0 +1,17 @@
+Gas_Station,Fuel_Type,Fuel_Grade,Cost_(IDR/L)
+Pertamina,Biosolar,0,6800
+Pertamina,Dexlite,0,15550
+Pertamina,Pertalite,1,10000
+Pertamina,Pertamax,2,13350
+Pertamina,Pertamax Turbo,3,15350
+Pertamina,Pertamax Green,3,14900
+Shell,Shell V-Power Diesel,0,16330
+Shell,Shell Super,2,13990
+Shell,Shell V-Power,3,15140
+Shell,Shell V-Power Nitro+,3,15480
+BP,BP Diesel,0,15665
+BP,BP 92,2,13950
+BP,BP Ultimate,3,15140
+Vivo,Revvo 90,1,12200
+Vivo,Revvo 92,2,13900
+Vivo,Revvo 95,3,14900
