@@ -1,4 +1,4 @@
-Gas_Station,Fuel_Type,Fuel_Grade,Cost_(IDR/L)
+gas_station,fuel_type,fuel_grade,fuel_price
 Pertamina,Biosolar,0,6800
 Pertamina,Dexlite,0,15550
 Pertamina,Pertalite,1,10000
